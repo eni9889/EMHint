@@ -31,10 +31,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         [self.hintDelegate hintStateWillClose:self];
     }
     
-    [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut 
+[self fadeAway];
+
+}
+-(void)fadeAway{
+    [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut
                      animations:^(){
                          [_modalView setAlpha:0.0];
-                     } 
+                     }
                      completion:^(BOOL finished){
                          [_modalView removeFromSuperview];
                          _modalView = nil;
@@ -42,11 +46,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                          {
                              [self.hintDelegate hintStateDidClose:self];
                          }
-
+                         
                      }];
-    
 }
-
 -(void)_addTap
 {
     UITapGestureRecognizer *tap = tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_onTap:)];
@@ -114,6 +116,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         [label setBackgroundColor:[UIColor clearColor]];
         [label setFont:ft];
         [label setText:message];
+        [label setTextAlignment:NSTextAlignmentCenter];
         [label setTextColor:[UIColor whiteColor]];
         [label setNumberOfLines:0];
         [label setLineBreakMode:UILineBreakModeWordWrap];

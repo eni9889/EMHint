@@ -92,4 +92,6 @@ typedef enum
  // where is the view onto which the modal will overlay
  */
 -(void)presentModalMessage:(NSString*)message where:(UIView*)presentationPlace;
+
+-(void) fadeAway;
 @end
