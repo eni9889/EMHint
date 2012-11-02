@@ -100,7 +100,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     if(v==nil)//no custom subview
     {
         //label
-        UIFont *ft = [UIFont fontWithName:@"Helvetica" size:17.0];
+        UIFont *ft = [UIFont fontWithName:@"ProximaNovaACond-Bold" size:17.0];
         CGSize sz = [message sizeWithFont:ft constrainedToSize:CGSizeMake(250, 1000)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(floorf(presentationPlace.center.x - sz.width/2),
                                                                    floorf(presentationPlace.center.y - sz.height/2),
